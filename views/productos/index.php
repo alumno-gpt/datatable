@@ -35,7 +35,7 @@
     <h1 class="text-center">LISTADO DE PRODUCTO</h1>
     <div class="col table-responsive">
        
-        <table id="tablaProducto" class="table table-bordered table-hover">
+        <table id="tablaProductos" class="table table-bordered table-hover">
         </table>
     </div>
 </div>

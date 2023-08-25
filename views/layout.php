@@ -32,21 +32,21 @@
                             <i class="bi bi-gear me-2"></i>Dropdown
                         </a>
                         <ul class="dropdown-menu  dropdown-menu-dark "id="dropwdownRevision" style="margin: 0;">
-                            <!-- <h6 class="dropdown-header">Información</h6> -->
-                            <li>
+       
+                        <li>
                                 <a class="dropdown-item nav-link text-white " href="/datatable/clientes"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Clientes</a>
                             </li>
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/datatable/productos"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Productos</a>
                             </li>
-        
-                        
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/datatable/productos/estadistica"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Estadistica ventas</a>
+                            </li>     
                         </ul>
                     </div> 
 
                 </ul> 
                 <div class="col-lg-1 d-grid mb-lg-0 mb-2">
-                    <!-- Ruta relativa desde el archivo donde se incluye menu.php -->
                     <a href="/datatable/" class="btn btn-danger"><i class="bi bi-arrow-bar-left"></i>MENÚ</a>
                 </div>
 

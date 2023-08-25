@@ -59,7 +59,7 @@ const buscar = async () => {
 
     let cliente_nombre = formulario.cliente_nombre.value;
     let cliente_nit = formulario.cliente_nit.value;
-    const url = `/datatable/API/clientes/buscar?cliente_nombre=${cliente_nombre}&cliente_nit=${cliente_nit}`;
+    const url = `/datatable/API/clientes/buscar`;
     // const url = `/datatable/API/clientes/buscar`;
     
     const config = {

@@ -9,13 +9,12 @@ const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
 const btnGuardar = document.getElementById('btnGuardar');
 const btnCancelar = document.getElementById('btnCancelar');
-//const divTabla = document.getElementById('divTabla');
+
 
 btnModificar.disabled = true
 btnModificar.parentElement.style.display = 'none'
 btnCancelar.disabled = true
 btnCancelar.parentElement.style.display = 'none'
-
 
 let contador = 1;
 const datatable = new Datatable('#tablaProductos', {
@@ -59,7 +58,7 @@ const buscar = async () => {
 
     let producto_nombre = formulario.producto_nombre.value;
     let producto_precio = formulario.producto_precio.value;
-    const url = `/datatable/API/productos/buscar?producto_nombre=${producto_nombre}&producto_precio=${producto_precio}`;
+    const url = `/datatable/API/productos/buscar`;
     // const url = `/datatable/API/productos/buscar`;
     
     const config = {
@@ -139,9 +138,6 @@ const guardar = async (evento) => {
         }
 }
 
-
-
-
 const traeDatos = (e) => {
     const button = e.target;
     const id = button.dataset.id
@@ -176,9 +172,7 @@ const colocarDatos = (dataset) => {
     btnModificar.parentElement.style.display = ''
     btnCancelar.disabled = false
     btnCancelar.parentElement.style.display = ''
-    //divTabla.style.display = 'none'
-    
-    
+ 
 }
 
 const modificar = async () => {
@@ -251,7 +245,6 @@ const eliminar = async (e) => {
             // console.log(data);
             // return;
 
-
             const { codigo, mensaje, detalle } = data;
             let icon = 'info'
             switch (codigo) {
@@ -275,20 +268,11 @@ const eliminar = async (e) => {
                 icon,
                 text: mensaje
             })
-
-
-
-
         } catch (error) {
             console.log(error);
         }
     }
-
 }
-
-
-
-
 
 const cancelarAccion = () => {
     btnGuardar.disabled = false
@@ -302,16 +286,11 @@ const cancelarAccion = () => {
     //divTabla.style.display = ''
 }
 
-
 buscar();
-
-
 
 formulario.addEventListener('submit', guardar)
 btnBuscar.addEventListener('click', buscar)
 btnModificar.addEventListener('click', modificar)
 btnCancelar.addEventListener('click', cancelarAccion)
-//btnModificar.addEventListener('click', modificar)
-//datatable.on('click','.btn-warning', colocarDatos )
 datatable.on('click','.btn-warning', traeDatos )
 datatable.on('click','.btn-danger', eliminar )

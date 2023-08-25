@@ -5,6 +5,7 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\ClienteController;
 use Controllers\ProductoController;
+use Controllers\DetalleController;
 use Controllers\AppController;
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -25,6 +26,8 @@ $router->post('/API/productos/guardar', [ProductoController::class,'guardarApi']
 $router->post('/API/productos/modificar', [ProductoController::class,'modificarApi']);
 $router->post('/API/productos/eliminar', [ProductoController::class,'eliminarApi']);
 
+$router->get('/productos/estadistica', [DetalleController::class,'estadistica']);
+$router->get('/API/productos/estadistica', [DetalleController::class,'detalleVentasAPI']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
